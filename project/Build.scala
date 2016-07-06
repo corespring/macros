@@ -14,7 +14,7 @@ object Build extends sbt.Build{
 
   lazy val test = Project("macros-test", file("test"))
     .settings(
-      publish := false,
+      publish := {},
       publishTo := authPublishTo.value,
       libraryDependencies += "org.specs2" %% "specs2-core" % "3.3.1" % "test"
     )
@@ -24,7 +24,7 @@ object Build extends sbt.Build{
       .settings(
         releaseVersionBump := Bump.Minor,
         publishTo := authPublishTo.value,
-        publish := false
+        publish := {}
       )
     .aggregate(macros,test)
 }
