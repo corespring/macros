@@ -15,12 +15,12 @@ object Build extends sbt.Build{
 
   lazy val test = Project("macros-test", file("test"))
     .settings(
-      publish := {},
+      publish := false,
       libraryDependencies += "org.specs2" %% "specs2-core" % "3.3.1" % "test"
     )
     .dependsOn(macros)
 
   lazy val root = Project("macros-root", file("."))
-    .settings(publish:= {})
+    .settings(publish:= false)
     .aggregate(macros,test)
 }
