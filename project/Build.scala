@@ -21,6 +21,5 @@ object Build extends sbt.Build{
     .dependsOn(macros)
 
   lazy val root = Project("macros-root", file("."))
-    .settings(publish:= false)
     .aggregate(macros,test)
 }
