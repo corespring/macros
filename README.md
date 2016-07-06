@@ -15,5 +15,5 @@ import org.corespring.macros.DescribeMacro._
 def ping(msg:String) = {
   describe(msg)
 }
-ping('hi') // returns 'function=ping, msg=hi'
+ping("hi") // returns 'function=ping, msg=hi'
 ```
